@@ -8,7 +8,7 @@ function(collect_srcs _out dir)
     set(${_out} ${SRCS} PARENT_SCOPE)
 endfunction()
 
-function(make_executable _name) {
+function(make_executable _name)
     collect_srcs(SRCS ${CMAKE_CURRENT_SOURCE_DIR}/srcs)
     add_executable(${_name} ${SRCS})
-}
+endfunction()
