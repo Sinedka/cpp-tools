@@ -1,0 +1,14 @@
+function(collect_srcs _out dir)
+    file(GLOB_RECURSE SRCS
+            ${dir}/*.cpp
+            ${dir}/*.c
+            ${dir}/*.mm
+            ${dir}/*.m)
+
+    set(${_out} ${SRCS} PARENT_SCOPE)
+endfunction()
+
+function(make_executable _name) {
+    collect_srcs(SRCS ${CMAKE_CURRENT_SOURCE_DIR}/srcs)
+    add_executable(${_name} ${SRCS})
+}
