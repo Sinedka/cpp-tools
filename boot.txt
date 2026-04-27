@@ -9,6 +9,6 @@ function(collect_srcs _out dir)
 endfunction()
 
 function(make_executable _name)
-    collect_srcs(SRCS ${CMAKE_CURRENT_SOURCE_DIR}/srcs)
+    collect_srcs(SRCS ${CMAKE_CURRENT_SOURCE_DIR}/src)
     add_executable(${_name} ${SRCS})
 endfunction()
